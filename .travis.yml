@@ -119,7 +119,7 @@ install:
 before_script:
 - which -a gcc
 - gcc --version
-- sudo apt install --reinstall gcc
+- sudo apt uninstall gcc
 - which -a gcc
 - gcc --version
 - dpkg -l gcc gcc-5
