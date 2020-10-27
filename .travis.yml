@@ -118,10 +118,9 @@ install:
 
 before_script:
 - which -a gcc
-- gcc --version
-- sudo apt uninstall gcc
-- which -a gcc
-- gcc --version
+- gcc --version --verbose
+- ls -l /usr/bin/
+- ls -l /etc/alternatives/
 - dpkg -l gcc gcc-5
 - dpkg --listfiles gcc
 - dpkg --listfiles gcc-5
