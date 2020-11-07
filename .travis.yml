@@ -6,88 +6,88 @@ stage: build
 
 jobs:
   include:
-    - language: bash
-      dist: freebsd
-      name: freebsd
-      os: freebsd
-      group: dev
-      install:
-      - pushd /opt/pyenv/
-      - sudo git checkout master
-      - sudo git pull
-      - popd
-      - sudo python -m pip install virtualenv==20.0.2
-    - language: ruby
-      dist: focal
-      group: edge
-      name: focal
-      os: linux
-    - language: minimal
-      dist: bionic
-      group: dev
-      name: bionic
-      os: linux
-    - language: minimal
-      dist: xenial
-      group: edge
-      name: xenial
-      os: linux
-    - dist: trusty
-      name: trusty
-      os: linux
-      if: NOT env(VERSION) =~ -dev$ AND NOT env(VERSION) =~ /^3\.([789]|1\d+)/
-    - dist: precise
-      name: precise
-      os: linux
-      if: NOT env(VERSION) =~ -dev$ AND NOT env(VERSION) =~ ^pypy AND NOT env(VERSION) =~ /^3\.([789]|1\d+)/
-    - arch: ppc64le
-      dist: xenial
-      name: xenial-ppc64le
-      os: linux
-      language: minimal
-    - arch: ppc64le
-      dist: bionic
-      name: bionic-ppc64le
-      os: linux
-      language: minimal
-    - arch: ppc64le
-      dist: focal
-      name: focal-ppc64le
-      os: linux
-    - arch: s390x
-      dist: xenial
-      name: xenial-s390x
-      os: linux
-      language: minimal
-    - arch: s390x
-      dist: bionic
-      name: bionic-s390x
-      os: linux
-      language: minimal
-    - arch: s390x
-      dist: focal
-      name: focal-s390x
-      os: linux
-      language: minimal
+    # - language: bash
+      # dist: freebsd
+      # name: freebsd
+      # os: freebsd
+      # group: dev
+      # install:
+      # - pushd /opt/pyenv/
+      # - sudo git checkout master
+      # - sudo git pull
+      # - popd
+      # - sudo python -m pip install virtualenv==20.0.2
+    # - language: ruby
+      # dist: focal
+      # group: edge
+      # name: focal
+      # os: linux
+    # - language: minimal
+      # dist: bionic
+      # group: dev
+      # name: bionic
+      # os: linux
+    # - language: minimal
+      # dist: xenial
+      # group: edge
+      # name: xenial
+      # os: linux
+    # - dist: trusty
+      # name: trusty
+      # os: linux
+      # if: NOT env(VERSION) =~ -dev$ AND NOT env(VERSION) =~ /^3\.([789]|1\d+)/
+    # - dist: precise
+      # name: precise
+      # os: linux
+      # if: NOT env(VERSION) =~ -dev$ AND NOT env(VERSION) =~ ^pypy AND NOT env(VERSION) =~ /^3\.([789]|1\d+)/
+    # - arch: ppc64le
+      # dist: xenial
+      # name: xenial-ppc64le
+      # os: linux
+      # language: minimal
+    # - arch: ppc64le
+      # dist: bionic
+      # name: bionic-ppc64le
+      # os: linux
+      # language: minimal
+    # - arch: ppc64le
+      # dist: focal
+      # name: focal-ppc64le
+      # os: linux
+    # - arch: s390x
+      # dist: xenial
+      # name: xenial-s390x
+      # os: linux
+      # language: minimal
+    # - arch: s390x
+      # dist: bionic
+      # name: bionic-s390x
+      # os: linux
+      # language: minimal
+    # - arch: s390x
+      # dist: focal
+      # name: focal-s390x
+      # os: linux
+      # language: minimal
     - arch: arm64
       dist: xenial
       name: xenial-arm64
       language: minimal
-    - arch: arm64
-      dist: bionic
-      name: bionic-arm64
-      language: minimal
-    - arch: arm64
-      dist: focal
-      name: focal-arm64
-      language: minimal
+    # - arch: arm64
+      # dist: bionic
+      # name: bionic-arm64
+      # language: minimal
+    # - arch: arm64
+      # dist: focal
+      # name: focal-arm64
+      # language: minimal
 
   allow_failures:
     - name: freebsd
 
 env:
   global:
-  - VERSION=3.8-dev
+  - VERSION=3.9.0
   # - ALIAS=nightly
 
 install:
